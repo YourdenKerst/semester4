@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YOURDEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ledger&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="IMG/favicon.png">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Left-aligned links -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                    aria-controls="offcanvasMenu">
+                    <span class="navbar-toggler-icon">
+                        <span class="middle"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a> <!-- Active link -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#about-me">ABOUT ME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="portfolio.html">/ PORTFOLIO /</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- Right-aligned logo -->
+                <a class="navbar-brand ms-auto" href="#">
+                    <h1 class="logo" href="index.html">YK</h1>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Offcanvas menu -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-menu">
+                <span class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">&times;</span>
+                <a href="index.html">Home</a> <!-- Active link -->
+                <a href="index.html#about-me">About me</a>
+                <a href="portfolio.html" class="active">/ Portfolio /</a>
+            </div>
+        </div>
+
+        <div class="portfoliocontainer">
+        
+
+                        <div class="card">
+                            <img src="IMG/polestar.png">
+                            <h2>Polestar project</h2>
+                            <p>Encourage safe and mindful driving in rentals with tailored, real-time insights designed to engage and motivate drivers.</p>
+                            <button onclick="window.location.href='polestar.html';">MORE...</button>
+                        </div>
+
+
+                                    <div class="card">
+                                        <img src="IMG/euroscores.png">
+                                        <h2>Euroscores</h2>
+                                        <p>Stay updated on Euro 2024 with a sleek, custom UI displaying live scores in real-time, powered by a robust sports API.</p>
+                                        <button onclick="window.location.href='euroscores.html';">MORE...</button>
+                                    </div>
+
+
+                                                <div class="card">
+                                                    <img src="IMG/enjoytheride.jpg">
+                                                    <h2>Enjoy the ride!</h2>
+                                                    <p>Enhance Mercedes-Benz Trucks’ image with a creative campaign that highlights innovation, reliability, and
+                                                    sustainability.</p>
+                                                    <button onclick="window.location.href='enjoytheride.html';">MORE...</button>
+                                                </div>
+
+
+                                                            <div class="card">
+                                                                <img src="IMG/circusofdreams.png">
+                                                                <h2>Circus of dreams</h2>
+                                                                <p>Dive into the magic of Circus of Dreams, a vibrant festival brought to life with a poster, a live event, and an epic
+                                                                aftermovie!</p>
+                                                                <button onclick="window.location.href='circusofdreams.html';">MORE...</button>
+                                                            </div>
+
+
+                                                                        <div class="card">
+                                                                            <img src="IMG/brandaband.png">
+                                                                            <h2>Brand a band</h2>
+                                                                            <p>We crafted the branding for Robin van Zandt, a country/folk singer, with a style that perfectly reflects his authentic
+                                                                            music and soulful storytelling.</p>
+                                                                            <button onclick="window.location.href='brandaband.html';">MORE...</button>
+                                                                        </div>
+        </div>
+
+
+
+        <footer class="footer d-flex justify-content-between align-items-center px-4">
+            <div href="index.html" class="logo">
+                <span>YK</span>
+            </div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/yourden-kerstens-212187327/" target="_blank"
+                    class="linkfooter text-decoration-none mx-2">LinkedIn</a>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="JS/main.js"></script>
+</body>
+</html>

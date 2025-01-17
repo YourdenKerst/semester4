@@ -1,0 +1,688 @@
+/* Algemeen resetten van marges en padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #002e3f;
+}
+
+html,
+body {
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+/* Custom styles */
+.offcanvas-menu {
+  width: 100%;
+  height: 100%;
+  background-color: #002e3f !important;
+  color: #fff;
+  padding: 20px;
+}
+
+.offcanvas-menu a {
+  color: #7a7a7a;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  font-family: "Ledger", serif;
+}
+
+.offcanvas-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #7a7a7a;
+}
+
+.logo {
+  color: #f2e2d5;
+  font-family: "Ledger", serif;
+  font-size: 2rem;
+  line-height: 1; /* Visueel centreren */
+  cursor: pointer;
+}
+
+.nav-link {
+  color: #7a7a7a;
+  text-decoration: none;
+  font-family: "Ledger", serif;
+}
+
+.nav-link:hover {
+  color: #afa49a;
+}
+
+.nav-link.active {
+  color: #f2e2d5 !important;
+}
+
+.offcanvas-menu a.active {
+  color: #f2e2d5;
+}
+
+.navbar-nav .nav-item:first-child .nav-link {
+  margin-left: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Centreert verticaal */
+  justify-content: center; /* Centreert horizontaal */
+  height: 100%; /* Consistente hoogte */
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container-fluid {
+  padding-left: 0 !important; /* Zorg dat er geen ruimte is */
+  padding-right: 0 !important; /* Zorg dat er geen ruimte is */
+  margin: 0 !important;
+  display: flex;
+  align-items: center; /* Center items verticaal */
+  justify-content: space-between; /* Space out items */
+}
+
+/* Custom hamburger menu */
+.navbar-toggler {
+  border: none; /* Remove border */
+}
+
+.navbar-toggler-icon {
+  background-image: none; /* Remove default icon */
+  display: inline-block;
+  width: 30px;
+  height: 25px; /* Adjust height to fit three lines */
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon .middle {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px; /* Thickness of the lines */
+  background-color: #f2e2d5; /* Color of the lines */
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: 0; /* Top line */
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0; /* Bottom line */
+}
+
+.navbar-toggler-icon .middle {
+  top: 50%; /* Middle line */
+  transform: translateY(-50%);
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon .middle {
+  opacity: 0; /* Hide middle line when collapsed */
+}
+
+.logo {
+  margin: 0; /* Remove unexpected margins */
+  padding: 0; /* Remove unnecessary padding */
+}
+
+.navbar {
+  display: flex;
+  align-items: center; /* Centreert inhoud verticaal */
+  margin: 0;
+  padding: 20px 0; /* Vergroot de padding (boven en onder) */
+  height: 80px; /* Stelt een minimale hoogte in voor de navbar */
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center logo */
+  }
+}
+
+/* Nieuwe sectie */
+.main-container {
+  height: calc(100vh - 80px); /* 80px is de hoogte van de navbar */
+  width: 100%;
+  display: flex;
+}
+
+.left-container {
+  flex: 2.5; /* 3/8e breedte */
+  height: 100%;
+  display: flex; /* Flexbox inschakelen */
+  align-items: center; /* Verticaal centreren */
+}
+
+.picofme {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite; /* Toepassen van de animatie */
+}
+
+/* Keyframes voor de float-animatie */
+@keyframes float {
+  0% {
+    transform: translateY(0); /* Startpositie */
+  }
+  50% {
+    transform: translateY(-10px); /* Zweef omhoog */
+  }
+  100% {
+    transform: translateY(0); /* Terug naar de startpositie */
+  }
+}
+
+.right-container {
+  flex: 5.5; /* 5/8e breedte */
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Verticaal centreren */
+  align-items: center; /* Verticaal centreren */
+  flex-direction: column;
+}
+
+.name {
+  transform: translateY(-60px); /* Verplaats de afbeeldingen omhoog */
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f2e2d5; /* Border aan de onderkant */
+}
+.left-container img {
+  max-width: 100%; /* Past de afbeelding aan binnen de container */
+  max-height: 95%; /* Zorgt ervoor dat de afbeelding niet groter wordt dan de container */
+  object-fit: contain; /* Behoud de verhoudingen van de afbeelding */
+}
+
+.button {
+  margin-top: -40px;
+  background-color: #d0c5b7;
+  color: #002b36;
+  border: none;
+  padding: 0.5em 2em; /* Gebruik em voor schaalbaarheid */
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem; /* Start met een relatief grote tekst */
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s, transform 0.6s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button.animate {
+  animation: spinAndNavigate 0.6s ease-in-out;
+}
+
+@keyframes spinAndNavigate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button .arrow {
+  height: 40px;
+  width: 1.5rem;
+  height: auto; /* Zorgt ervoor dat de hoogte in verhouding blijft */
+  background-color: #d0c5b7; /* Kies een achtergrondkleur die bij je design past */
+}
+
+/*scroll text */
+
+.main2 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  color: #d2cac1;
+  font-family: "Rajdhani", sans-serif;
+  justify-content: center;
+}
+
+.line {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.line span {
+  display: inline-block;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+/* Beginposities instellen */
+.line.top span {
+  transform: translateX(-50%); /* Start buiten het scherm aan de linkerkant */
+}
+
+.line.middle span {
+  transform: translateX(-20%); /* Start op de standaardpositie */
+}
+
+.line.bottom span {
+  transform: translateX(-50%); /* Start buiten het scherm aan de linkerkant */
+}
+
+/* sectie 3 */
+
+.main3 {
+  height: 100vh;
+  display: flex;
+}
+
+.left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left img {
+  max-width: 50%;
+  margin-left: 5vw;
+  margin-top: 20%;
+}
+
+.right .skillshead {
+  max-width: 50%;
+  margin-left: 5vw;
+  margin-top: 20%;
+}
+
+.right .skills {
+  max-width: 65%;
+  margin-left: 5vw;
+}
+
+.left p {
+  color: #d2cac1;
+  max-width: 65%;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.3rem;
+  margin-left: 5vw;
+}
+
+/* footer */
+
+.footer {
+  height: 10vh;
+  border-top: 1px solid #f2e2d5;
+}
+
+.linkfooter {
+  font-family: "Ledger", serif;
+  text-decoration: none;
+  color: #f2e2d5;
+  font-size: 1rem;
+}
+
+/* portfolio */
+
+.portfoliocontainer {
+  background-color: #002e3f !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px; /* Ruimte tussen de kaarten */
+  padding: 16px;
+  padding-left: 14%;
+  padding-right: 14%;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 80px); /* 3 kaarten naast elkaar op grote schermen */
+  max-width: calc(33.333% - 80px);
+  box-sizing: border-box;
+  border: 5px solid #f2e2d5;
+  padding: 16px;
+  border-radius: 0px;
+  background-color: #002e3f !important;
+  transition: all 0.3s ease-in-out; /* Voor een vloeiende responsieve ervaring */
+}
+
+.card h2 {
+  color: #f2e2d5;
+  font-family: "Ledger", serif;
+  margin-top: 20px;
+}
+
+.card p {
+  color: #f2e2d5;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.card button {
+  max-width: 40%;
+  height: 40px;
+  background-color: #f2e2d5;
+  border: none;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  color: #002e3f;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 40px); /* 2 kaarten naast elkaar op medium schermen */
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* 1 kaart per rij op kleinere schermen */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-container {
+    display: none; /* Verberg de afbeelding */
+  }
+  .right-container {
+    flex: 1; /* Zorg ervoor dat de rechtercontainer de hele breedte vult */
+  }
+}
+
+@media (max-width: 576px) {
+  .right {
+    display: none; /* Verberg de afbeelding */
+  }
+
+  .left {
+    width: 100vw; /* Zorg ervoor dat de overgebleven sectie de hele breedte gebruikt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left img {
+    max-width: 70%;
+    margin-left: 0; /* Zorg ervoor dat de afbeelding het breedte heeft */
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .left p {
+    font-size: 1rem; /* Verklein de tekst */
+    max-width: 80%; /* Beperk de breedte */
+  }
+}
+
+@media (max-width: 768px) {
+  .left p {
+    font-size: 0.9rem; /* Nog kleinere tekst */
+    max-width: 90%; /* Meer ruimte op kleinere schermen */
+    margin-left: 2vw; /* Minder marge aan de zijkant */
+  }
+}
+
+@media (max-width: 576px) {
+  .left p {
+    font-size: 0.8rem; /* Kleinste tekst voor kleine schermen */
+    margin-left: 1vw; /* Bijna geen marge */
+  }
+}
+
+.name {
+  max-width: 50%; /* Begin breedte is 50% van container */
+  height: auto; /* Houd aspect ratio */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .name {
+    max-width: 80%; /* Verklein de afbeelding bij kleinere schermen */
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    max-width: 80%; /* Nog kleiner op tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .name {
+    max-width: 80%; /* Kleinste formaat voor smartphones */
+  }
+}
+
+/* portfolio infostukken */
+
+.textcontainer {
+  padding-top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.textcontent {
+  width: 80%;
+  color: #f2e2d5;
+}
+
+.textheader {
+  font-family: "Ledger", serif;
+}
+
+.textinfo {
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Section container */
+.technologies-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Title styling */
+.technologies-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+  text-align: left;
+  width: 80%;
+  font-family: "Ledger", serif;
+  color: #f2e2d5;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  width: 80%;
+  gap: 1rem; /* Spacing between all buttons */
+}
+
+/* Specific margin adjustments */
+.tech-button:first-child {
+  margin-left: 0; /* No margin-left for the first button */
+}
+
+.tech-button:not(:first-child) {
+  margin-left: 1rem; /* Margin between buttons */
+}
+
+/* Button styles */
+.tech-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 3rem;
+  font-size: 1rem;
+  color: #f2e2d5;
+  cursor: default;
+  font-family: "Rajdhani", sans-serif;
+  border: 2px solid #f2e2d5;
+}
+
+/* Responsive: Center buttons and adjust margins on smaller screens */
+@media (max-width: 600px) {
+  .button-container {
+    justify-content: center;
+  }
+
+  .tech-button:not(:first-child) {
+    margin-left: 0; /* Margin between buttons */
+  }
+
+  .tech-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0; /* Reset margin-left */
+  }
+
+  .tech-button:not(:first-child) {
+    margin-top: 1rem; /* Add margin between stacked buttons */
+  }
+}
+
+/* Video Section */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* Responsive Video */
+.responsive-video {
+  max-width: 100%;
+  max-height: 80vh; /* Zorg ervoor dat de video nooit hoger is dan 80% van het scherm */
+  width: auto; /* Houd de proporties van de video */
+  height: auto; /* Houd de proporties van de video */
+  border-radius: 8px; /* Optioneel: ronde hoeken */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optioneel: schaduw voor visuele flair */
+}
+
+/* Smaller screens adjustments */
+@media (max-width: 600px) {
+  .responsive-video {
+    max-height: 60vh; /* Zorg voor meer ruimte op kleinere schermen */
+  }
+}
+
+/* Section container */
+.technologies-section2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Title styling */
+.technologies-title2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+  text-align: left;
+  width: 80%;
+  font-family: "Ledger", serif;
+  color: #f2e2d5;
+  margin-top: 1.2rem;
+}
+
+/* Button container */
+.button-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  width: 80%;
+  gap: 1rem; /* Spacing between all buttons */
+}
+
+/* Specific margin adjustments */
+.tech-button2:first-child {
+  margin-left: 0; /* No margin-left for the first button */
+}
+
+.tech-button2:not(:first-child) {
+  margin-left: 1rem; /* Margin between buttons */
+}
+
+/* Button styles */
+.tech-button2 {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 3rem;
+  font-size: 1rem;
+  color: #f2e2d5;
+  cursor: default;
+  font-family: "Rajdhani", sans-serif;
+  border: 2px solid #f2e2d5;
+  cursor: pointer;
+}
+
+/* Responsive: Center buttons and adjust margins on smaller screens */
+@media (max-width: 600px) {
+  .button-container2 {
+    justify-content: center;
+  }
+
+  .tech-button2:not(:first-child) {
+    margin-left: 0; /* Margin between buttons */
+  }
+
+  .tech-button2 {
+    width: 100%;
+    text-align: center;
+    margin-left: 0; /* Reset margin-left */
+  }
+
+  .tech-button2:not(:first-child) {
+    margin-top: 1rem; /* Add margin between stacked buttons */
+  }
+}
